@@ -14,7 +14,7 @@ prepare_react_native_project!
 #   use_frameworks! :linkage => linkage.to_sym
 # end
 
-target 'GroceryStore' do
+target 'GroceryHub' do
   config = use_native_modules!
 
   use_frameworks! :linkage => :static
