@@ -1,4 +1,5 @@
 export const spacing = {
+  x0: 2,
   x1: 4,
   x2: 6,
   x3: 8,
@@ -9,4 +10,7 @@ export const spacing = {
   x8: 18,
   x9: 20,
   x10: 24,
+  x11: 26,
+  x12: 28,
+  x13: 30,
 };

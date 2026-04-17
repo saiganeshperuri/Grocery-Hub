@@ -24,15 +24,13 @@ export const styles = StyleSheet.create({
     borderColor: 'white',
     backgroundColor: colors.white,
     marginBottom: spacing.x10,
-    borderRadius: 6,
+    borderRadius: spacing.x2,
     overflow: 'hidden',
-    //height: 100,
   },
 
   image: {
     width: '100%',
     height: 250,
-    //backgroundColor: colors.placeholder + '20', // light grey background
   },
 
   labelBox: {

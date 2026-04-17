@@ -5,15 +5,17 @@ import { useProductList } from './useProductList';
 import { useRoute, RouteProp } from '@react-navigation/native';
 import { BottomTabParamList } from '../../Navigations/BottomTabNavigator';
 import { useCart } from '../../hooks/useCart';
-import { Product } from '../../store/products/types';
+import { useFetchProducts } from '../../hooks/useFetchProducts';
 
 type SearchRouteProp = RouteProp<BottomTabParamList, 'Search'>;
 
 export function SearchScreen() {
+  useFetchProducts();
+
   const route = useRoute<SearchRouteProp>();
   const category = route.params?.category || null;
 
-  const { products, loading, error, refetch } = useProductList(category);
+  const { products, loading, error } = useProductList(category);
 
   const {
     quantitiesById,
@@ -30,7 +32,6 @@ export function SearchScreen() {
         data={products}
         loading={loading}
         error={error}
-        onRefresh={refetch}
         quantitiesById={quantities}
         onAdd={addProductToCart}
         onInc={incrementProductInCart}

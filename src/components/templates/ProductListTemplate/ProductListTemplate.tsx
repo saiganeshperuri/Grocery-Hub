@@ -60,8 +60,6 @@ export default function ProductListTemplate({
           />
         </View>
       )}
-      onRefresh={onRefresh}
-      refreshing={!!loading}
     />
   );
 }

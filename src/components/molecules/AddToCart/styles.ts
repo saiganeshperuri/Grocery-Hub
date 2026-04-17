@@ -1,9 +1,11 @@
 import { StyleSheet } from 'react-native';
+import { spacing } from '../../../theme/spacing';
+import { colors } from '../../../theme/colors';
 
 export const styles = StyleSheet.create({
   container: {
-    marginTop: 4,
-    marginBottom: 6,
+    marginTop: spacing.x1,
+    marginBottom: spacing.x2,
   },
 
   bar: {
@@ -11,34 +13,34 @@ export const styles = StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'center',
 
-    backgroundColor: '#1653cd',
-    borderRadius: 18,
+    backgroundColor: colors.primaryDark,
+    borderRadius: spacing.x8,
 
     height: 32,
-    paddingHorizontal: 12,
+    paddingHorizontal: spacing.x5,
     minWidth: 80,
   },
 
   addText: {
-    color: '#fff',
+    color: colors.white,
     fontSize: 13,
     fontWeight: '600',
   },
 
   stepBtn: {
-    paddingHorizontal: 6,
+    paddingHorizontal: spacing.x2,
   },
 
   stepText: {
-    color: '#fff',
+    color: colors.white,
     fontSize: 16,
     fontWeight: '700',
   },
 
   qty: {
-    color: '#fff',
+    color: colors.white,
     fontSize: 15,
     fontWeight: '700',
-    marginHorizontal: 8,
+    marginHorizontal: spacing.x3,
   },
 });

@@ -1,17 +1,11 @@
-import { useEffect, useMemo } from 'react';
-import { useDispatch, useSelector } from 'react-redux';
-import { AppDispatch, RootState } from '../../store/store';
-import { fetchProducts } from '../../store/products/productThunk';
+import { useMemo } from 'react';
+import { useSelector } from 'react-redux';
+import { RootState } from '../../store/store';
 
 export const useProductList = (category: string | null) => {
-  const dispatch = useDispatch<AppDispatch>();
   const productsState = useSelector(
     (rootState: RootState) => rootState.products,
   );
-
-  useEffect(() => {
-    dispatch(fetchProducts());
-  }, [dispatch]);
 
   const filteredProducts = useMemo(() => {
     if (!category) return productsState.items;
@@ -20,12 +14,9 @@ export const useProductList = (category: string | null) => {
     );
   }, [category, productsState.items]);
 
-  const data = {
+  return {
     products: filteredProducts,
     loading: productsState.loading,
     error: productsState.error,
-    refetch: () => dispatch(fetchProducts()),
   };
-  console.log(data);
-  return data;
 };

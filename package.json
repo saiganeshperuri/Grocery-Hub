@@ -10,6 +10,7 @@
     "test": "jest"
   },
   "dependencies": {
+    "@google/genai": "^1.49.0",
     "@react-native-community/netinfo": "^12.0.1",
     "@react-native-firebase/app": "^23.8.6",
     "@react-native-firebase/auth": "^23.8.5",
@@ -24,6 +25,7 @@
     "react": "19.2.0",
     "react-native": "0.83.1",
     "react-native-bootsplash": "^7.1.0",
+    "react-native-dotenv": "^3.4.11",
     "react-native-pager-view": "^8.0.0",
     "react-native-safe-area-context": "^5.6.2",
     "react-native-screens": "^4.22.0",

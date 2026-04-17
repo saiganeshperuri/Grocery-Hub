@@ -1,5 +1,6 @@
 import { StyleSheet } from 'react-native';
 import { spacing } from '../../../theme/spacing';
+import { colors } from '../../../theme/colors';
 
 export const styles = StyleSheet.create({
   image: { flex: 1 },
@@ -10,8 +11,8 @@ export const styles = StyleSheet.create({
     width: '100%',
     paddingHorizontal: spacing.x10,
     paddingVertical: spacing.x9,
-    borderRadius: 20,
-    backgroundColor: '#FFF9F7',
-    borderColor: 'red',
+    borderRadius: spacing.x10,
+    backgroundColor: colors.white,
+    borderColor: colors.error,
   },
 });

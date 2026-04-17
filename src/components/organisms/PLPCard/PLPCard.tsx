@@ -1,47 +1,3 @@
-// import React, { useState } from 'react';
-// import { View, Image } from 'react-native';
-// import AppText from '../../atoms/AppText/AppText';
-// import Price from '../../atoms/Price/Price';
-
-// import { styles } from './styles';
-// import AddToCartBar from '../../molecules/AddToCart/AddToCartBar';
-
-// export type PLPCardProps = {
-//   name: string;
-//   image: string;
-//   price: number;
-// };
-
-// export default function PLPCard({ name, image, price }: PLPCardProps) {
-//   const [qty, setQty] = useState(0);
-
-//   return (
-//     <View style={styles.card}>
-//       <View style={styles.imageWrap}>
-//         <Image source={{ uri: image }} style={styles.img} />
-//       </View>
-
-//       <View style={styles.nameContainer}>
-//         <AppText numberOfLines={2} style={styles.name}>
-//           {name}
-//         </AppText>
-
-//         <View style={styles.row}>
-//           <Price value={price} />
-//           <AddToCartBar
-//             qty={qty}
-//             onAdd={() => setQty(1)}
-//             onInc={() => setQty(q => q + 1)}
-//             onDec={() => setQty(q => Math.max(0, q - 1))}
-//           />
-//         </View>
-//       </View>
-//     </View>
-//   );
-// }
-
-// components/organisms/PLPCard/PLPCard.tsx
-// components/organisms/PLPCard/PLPCard.tsx
 import React from 'react';
 import { View, Image } from 'react-native';
 import AppText from '../../atoms/AppText/AppText';
@@ -65,6 +21,9 @@ export default function PLPCard({
   onInc,
   onDec,
 }: PLPCardProps) {
+  const effectiveQty = quantity || 1;
+  const totalPrice = product.Price * effectiveQty;
+
   return (
     <View style={styles.card}>
       <View style={styles.imageWrap}>
@@ -77,7 +36,7 @@ export default function PLPCard({
         </AppText>
 
         <View style={styles.row}>
-          <Price value={product.Price} />
+          <Price value={totalPrice} />
           <AddToCartBar
             qty={quantity}
             onAdd={() => onAdd(product)}

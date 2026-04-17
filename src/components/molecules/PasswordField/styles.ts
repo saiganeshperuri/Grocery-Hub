@@ -16,6 +16,6 @@ export const styles = StyleSheet.create({
     width: 22,
     height: 22,
     opacity: 0.9,
-    marginBottom: 8,
+    marginBottom: spacing.x3,
   },
 });

@@ -5,7 +5,7 @@ import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import { HomeScreen } from '../Screens/Home/HomeScreen';
 import { SearchScreen } from '../Screens/Search/SearchScreen';
 import { CartScreen } from '../Screens/Cart/CartScreen';
-import { FavouritesScreen } from '../Screens/Favourites/FavouritesScreen';
+import { GroceryAssistant } from '../Screens/GroceryAssistant/GroceryAssistantScreen';
 
 import { StackNavigator } from './StackNavigator';
 import { Icon } from '../components/atoms/Icon/Icon';
@@ -14,7 +14,7 @@ export type BottomTabParamList = {
   Home: undefined;
   Search: { category: string | null };
   Cart: undefined;
-  Favourites: undefined;
+  SmartAI: undefined;
   Account: undefined;
 };
 
@@ -84,15 +84,15 @@ export const BottomTabNavigator = () => (
     />
 
     <Tab.Screen
-      name="Favourites"
-      component={FavouritesScreen}
+      name="SmartAI"
+      component={GroceryAssistant}
       options={{
-        headerTitle: 'Favourites',
+        headerTitle: 'Grocery Assistant',
         tabBarActiveTintColor: '#000',
         tabBarInactiveTintColor: '#000',
         tabBarActiveBackgroundColor: '#E0E0E0',
         tabBarLabelStyle: { fontSize: 12 },
-        tabBarIcon: () => <Icon name="favourites" />,
+        tabBarIcon: () => <Icon name="smartAI" />,
       }}
     />
 

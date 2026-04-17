@@ -35,11 +35,13 @@
 import { configureStore } from '@reduxjs/toolkit';
 import { cartReducer } from './cart/cartSlice';
 import { productsReducer } from './products/productSlice';
+import { aiReducer } from './ai/aiSlice';
 
 export const store = configureStore({
   reducer: {
     cart: cartReducer,
     products: productsReducer,
+    ai: aiReducer,
   },
 });
 
