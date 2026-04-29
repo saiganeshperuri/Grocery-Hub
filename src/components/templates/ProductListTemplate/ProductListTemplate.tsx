@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect, useRef } from 'react';
 import { FlatList, View, ActivityIndicator, Text } from 'react-native';
 import PLPCard from '../../organisms/PLPCard/PLPCard';
 import { styles } from './styles';
@@ -26,6 +26,15 @@ export default function ProductListTemplate({
   onInc,
   onDec,
 }: ProductListTemplateProps) {
+  const flatListRef = useRef<FlatList>(null);
+
+  useEffect(() => {
+    flatListRef.current?.scrollToOffset({
+      offset: 0,
+      animated: false,
+    });
+  }, [data]);
+
   if (loading) {
     return (
       <View style={styles.center}>
@@ -46,6 +55,7 @@ export default function ProductListTemplate({
     <FlatList
       data={data}
       keyExtractor={product => product.id}
+      ref={flatListRef}
       numColumns={2}
       columnWrapperStyle={styles.row}
       contentContainerStyle={styles.container}
